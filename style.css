@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffe6f2;
+    overflow: hidden;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* 爱心样式 */
+.heart {
+    position: absolute;
+    color: #ff3366;
+    animation: fall 8s linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 轮播容器 */
+.carousel {
+    position: relative;
+    height: 100vh;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+    color: #ff3366;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .text-box {
+        font-size: 1.1em;
+        padding: 15px 25px;
+        bottom: 10%;
+    }
+}
